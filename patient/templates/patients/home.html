@@ -1,0 +1,17 @@
+{% extends "patient/base.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <small class="text-muted">{{ post.last_login }}</small>
+              <a class="mr-2" href="#">{{ post.lastname }} {{ post.firstname }} {{ post.middlename }}</a>
+            </div>
+            <h6><a class="article-title" href="{{ post.user.profile.document.url }}">Patient's File</a></h6>
+            <p class="article-content">{{ post.patientsnumber }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+
+
